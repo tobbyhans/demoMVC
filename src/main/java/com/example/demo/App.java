@@ -1,8 +1,10 @@
 package com.example.demo;
 
+import org.springframework.http.HttpEntity;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -48,7 +50,17 @@ public class App {
 
 		return "valor retornado con variable   :::  " + variable;
 	}
+	
+	//debemos tern un html que reponda a la ruta /body asi capturamos los datos
+	@RequestMapping(value = "/body", method = RequestMethod.POST)
+	@ResponseBody
+	public String wichEntity(@RequestBody String body) {
+
+		return "responde desde formulario   :::  " + body;
+	}
 }
+
+
 
 
 
