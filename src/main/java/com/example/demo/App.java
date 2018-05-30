@@ -1,5 +1,9 @@
 package com.example.demo;
 
+import java.util.Date;
+
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -58,6 +62,13 @@ public class App {
 
 		return "responde desde formulario   :::  " + body;
 	}
+	
+	@RequestMapping(value="/fecha")
+	@ResponseBody
+	public String fechaparceada (@RequestParam @DateTimeFormat(pattern ="dd-MM-yyyy")  Date fecha)	{
+	return "fecha parceada" + fecha;
+	}
+	
 }
 
 
