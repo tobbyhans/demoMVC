@@ -4,34 +4,52 @@ public class Persona {
 	
 
 		String nombre;
+		String sexo;
 
 		
 
-		public Persona() {}
-
-		public Persona(String string) {
-			// TODO Auto-generated constructor stub
+		public String getSexo() {
+			return sexo;
 		}
 
-		public Persona(String string, String string2) {
-			// TODO Auto-generated constructor stub
+
+
+		public void setSexo(String sexo) {
+			this.sexo = sexo;
 		}
+
+
 
 		public String getNombre() {
 			return nombre;
+			
 		}
+
+
+
+		public Persona(String nombre, String sexo) {
+			super();
+			this.nombre = nombre;
+			this.sexo = sexo;
+		}
+
+
 
 		public void setNombre(String nombre) {
 			this.nombre = nombre;
 		}
 
-		@Override
-		public String toString() {
-			return "Persona [nombre=" + nombre + "]";
-		}
-		
-	
 
-	
+
+		public Persona(String nombre) {
+			super();
+			this.nombre = nombre;
+		}
+
+
+
+		public Persona() {}
+
+			
 
 }

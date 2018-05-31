@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 
 @Controller
+@RequestMapping(value="/valor/*")
 public class App {
 
 	@RequestMapping(value = "/saludoinicial")
@@ -31,10 +32,10 @@ public class App {
 		return "juan";
 	}
 
-	@RequestMapping(value = "/test")
+	@RequestMapping(value = "/test",method=RequestMethod.GET)
 	@ResponseBody
-	public Persona getpersona1() {
-		return new Persona("pepe", "juan");
+	public Persona getpersona() {
+		return new Persona("pepe","hombre");
 	}
 	
 
@@ -67,6 +68,12 @@ public class App {
 	@ResponseBody
 	public String fechaparceada (@RequestParam @DateTimeFormat(pattern ="dd-MM-yyyy")  Date fecha)	{
 	return "fecha parceada" + fecha;
+	}
+	
+	@RequestMapping(value="/xml", method=RequestMethod.GET)
+	@ResponseBody
+	public Javabean xml(){		
+		return new Javabean ("manzana","lechuga");
 	}
 	
 }
